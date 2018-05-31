@@ -26,3 +26,15 @@ test('clicking login stats oauth flow', async () => {
   const url = await page.url();
   expect(url).toMatch(/accounts\.google\.com/);
 });
+
+test('When signed in, shows logout button', async () => {
+  const id = '5b0cf731a1a1ae5c8be07f42';
+
+  const Buffer = require('safe-buffer').Buffer;
+  const sessionObject = {
+    passport: {
+      user: id
+    }
+  };
+  const sessionString = Buffer.from(JSON.stringify(sessionObject)).toString('base64');
+});
